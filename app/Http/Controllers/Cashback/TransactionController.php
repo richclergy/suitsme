@@ -49,12 +49,12 @@ class TransactionController extends Controller
                     return;
                 }
                 if ($row['payee']['merchantId'] == 1144 || $row['payee']['merchantId'] == 2033) {
-                    $rows['Id'] = strval($row['id']);
-                    $rows['merchant'] = strval($row['payee']['merchantId']);
-                    $rows['customerRef'] = strval($row['payer']['accountNo']);
-                    $rows['customerRef'] = strval($row['amount']);
+                    $rows['Id'] = "'".$row['id']."'";
+                    $rows['merchant'] = "".$row['payee']['merchantId']."";
+                    $rows['customerRef'] = "".$row['payer']['accountNo']."";
+                    $rows['customerRef'] = "".$row['amount']."";
                     $rows['txnCurrency'] = $row['currency'];
-                    $rows['txnDateTime'] = strval($row['created_date_time']);
+                    $rows['txnDateTime'] = "".$row['created_date_time']."";
 
                     fputcsv(
                         $file, 
@@ -82,12 +82,12 @@ class TransactionController extends Controller
                 }
                 
                 if ($row['payee']['merchantId'] == 1022 || $row['payee']['merchantId'] == 7596) {
-                    $rows['id'] = strval($row['id']);
-                    $rows['merchantId'] = strval($row['payee']['merchantId']);
-                    $rows['accountNumber'] = strval($row['payer']['accountNo']);
-                    $rows['transactionAmount'] = strval($row['amount']);
+                    $rows['id'] = "'".$row['id']."'";
+                    $rows['merchantId'] = "".$row['payee']['merchantId']."";
+                    $rows['accountNumber'] = "'".$row['payer']['accountNo']."'";
+                    $rows['transactionAmount'] = "".$row['amount']."";
                     $rows['currency'] = $row['currency'];
-                    $rows['dateTime'] = strval($row['created_date_time']);
+                    $rows['dateTime'] = "".$row['created_date_time']."";
     
                     fputcsv(
                         $file, 
