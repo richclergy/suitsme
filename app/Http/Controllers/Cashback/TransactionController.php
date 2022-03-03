@@ -37,8 +37,8 @@ class TransactionController extends Controller
         );
 
         $callback = function () use ($data, $columns) {
-            $internal = ["Your Company Internal"];
-            $external = ["Your Company External"];
+            $internal = ["Suitsme Internal"];
+            $external = ["Suitsme External"];
 
             $file = fopen('php://output', 'w');
             fputcsv($file, $internal);
